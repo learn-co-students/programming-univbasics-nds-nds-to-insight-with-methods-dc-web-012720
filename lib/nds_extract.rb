@@ -21,11 +21,7 @@ def directors_totals(nds)
   while i < nds.length do
     totalSum = 0
     currentDirector = nds[i][:name]
-    j = 0
-    while j < nds[i][:movies].length do
-      totalSum += nds[i][:movies][j][:worldwide_gross]
-      j += 1
-    end
+    totalSum = gross_for_director(nds[i])
     result[currentDirector] = totalSum
     i += 1
   end
