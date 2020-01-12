@@ -3,10 +3,11 @@ require 'spec_helper'
 
 describe 'gross_for_director method' do
   it "correctly totals the worldwide earnings for a director" do
+    element_index = 0
     first_director_name = directors_database.first.values.first
     first_director_hash = directors_database.find{ |x| x[:name] == first_director_name }
 
-    expect(gross_for_director(first_director_hash)).to eq(1357566430)
+    expect(gross_for_director(directors_database, element_index)).to eq(1357566430)
   end
 end
 
